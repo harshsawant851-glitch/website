@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FuturePath Career Guidance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+    }
+
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .intro, .qr-section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    .qr-section {
+      text-align: center;
+    }
+
+    .qr-section img {
+      width: 200px;
+    }
+
+    .sessions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .session-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      text-align: center;
+    }
+
+    .session-card h3 {
+      color: #4CAF50;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px 18px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #45a049;
+    }
+
+    /* Payment Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 400px;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .payment-option {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .payment-option:hover {
+      background: #f1f1f1;
+    }
+
+    .close {
+      color: red;
+      cursor: pointer;
+      float: right;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>FuturePath Career Guidance</h1>
+  <p>Your journey to the right career starts here</p>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>About Us</h2>
+    <p>
+      FuturePath is a newly established career guidance organization dedicated to helping students explore and choose the right career path. Our mission is to provide personalized guidance, access to expert counseling, and resources that empower students to make informed decisions about their future. With a focus on innovation and student success, we aim to bridge the gap between education and career opportunities.
+    </p>
+  </div>
+
+  <div class="qr-section">
+    <h2>Student Interest Form</h2>
+    <p>Scan the QR code or click below to fill the form</p>
+    <img src="post.jpg" alt="QR Code">
+    <br><br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCm2sJF9RJW4MS2nFMH_N6WvROzfF6NVJfiwXUl14QEztn8A/viewform"
+       target="_blank" class="btn">Open Form</a>
+  </div>
+
+  <h2>Professor Counseling Sessions</h2>
+
+  <div class="sessions">
+    <div class="session-card">
+      <h3>Science & Technology</h3>
+      <p>Price: ₹999 </p>
+      <button class="btn" onclick="openPayment('Science & Technology')">Book Session</button>
+    </div>
+
+    <div class="session-card">
+      <h3>Medicine & Healthcare</h3>
+      <p>Price: ₹999 </p>
+      <button class="btn" onclick="openPayment('Medicine & Healthcare')">Book Session</button>
+    </div>
+
+    <div class="session-card">
+      <h3>Arts & Humanities</h3>
+      <p>Price: ₹999 </p>
+      <button class="btn" onclick="openPayment('Arts & Humanities')">Book Session</button>
+    </div>
+
+    <div class="session-card">
+      <h3>Business & Management</h3>
+      <p>Price: ₹999 </p>
+      <button class="btn" onclick="openPayment('Business & Management')">Book Session</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Payment Modal -->
+<div class="modal" id="paymentModal">
+  <div class="modal-content">
+    <span class="close" onclick="closePayment()">×</span>
+    <h3 id="sessionTitle"></h3>
+    <p>Select a payment method </p>
+
+    <div class="payment-option">UPI (Google Pay / PhonePe)</div>
+    <div class="payment-option">Debit / Credit Card</div>
+    <div class="payment-option">Net Banking</div>
+
+    <p style="font-size: 12px; color: gray;">* This is a sample payment window for demonstration only</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 FuturePath Career Guidance
+</footer>
+
+<script>
+  function openPayment(sessionName) {
+    document.getElementById("sessionTitle").innerText =
+      sessionName + " Counseling Session";
+    document.getElementById("paymentModal").style.display = "block";
+  }
+
+  function closePayment() {
+    document.getElementById("paymentModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
